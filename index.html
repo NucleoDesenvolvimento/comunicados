@@ -1,130 +1,153 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Central de Comunicados</title>
+    <meta
+      name="description"
+      content="Central de Comunicados - Núcleo Desenvolvimento"
+    />
+    <meta name="theme-color" content="#0B1220" />
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" href="favicon.ico" />
+  </head>
 
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <body>
+    <div id="background"></div>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <main class="container-xxl py-5">
+      <div class="app-container">
+        <header id="hero" class="hero text-center">
+          <span class="badge rounded-pill bg-primary px-3 py-2 mb-3">
+            <i class="bi bi-cpu-fill"></i>
+            NÚCLEO DESENVOLVIMENTO
+          </span>
 
-</head>
+          <h1 class="display-3 fw-bold">Central de Comunicados</h1>
 
-<body>
+          <p class="lead">
+            Plataforma moderna para avisos, eventos e informações.
+          </p>
+        </header>
 
-<div class="container py-5">
+        <section id="carouselSection" aria-label="Comunicados">
+          <button id="btnPrev" class="carousel-nav" aria-label="Anterior">
+            <i class="bi bi-chevron-left"></i>
+          </button>
 
-    <header class="text-center mb-5">
+          <div id="carouselCard"></div>
 
-        <h1 class="display-4">
-            <i class="bi bi-megaphone-fill"></i>
-            Central de Comunicados
-        </h1>
+          <button id="btnNext" class="carousel-nav" aria-label="Próximo">
+            <i class="bi bi-chevron-right"></i>
+          </button>
+        </section>
 
-        <p class="lead">
+        <div id="carouselDots" class="text-center mt-3"></div>
+
+        <section id="filtros" aria-label="Filtros de comunicados"></section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container-xxl">
+        <small id="footer-text">
+          © 2026 •
+          <a
+            href="#"
+            class="footer-link"
+            data-bs-toggle="modal"
+            data-bs-target="#developerModal"
+          >
             NucleoDesenvolvimento
-        </p>
+          </a>
+        </small>
+      </div>
+    </footer>
 
-    </header>
+    <div
+      class="modal fade"
+      id="developerModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="developerModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="developerModalLabel">
+              <i class="bi bi-code-slash"></i> Desenvolvedor
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Fechar"
+            ></button>
+          </div>
 
-    <div class="row g-4">
+          <div class="modal-body">
+            <p><strong>Nome</strong><br />Mizael Nunes</p>
+            <p>
+              <strong>E-mail</strong><br /><span id="emailDev"
+                >blindajedigital@blindajedigital.online</span
+              >
+            </p>
+          </div>
 
-        <div class="col-lg-4">
-
-            <div class="card aviso-card">
-
-                <div class="card-body">
-
-                    <span class="badge bg-info">IMPORTANTE</span>
-
-                    <h3 class="mt-3">
-                        Atualização do Sistema
-                    </h3>
-
-                    <p>
-                        Esta é uma mensagem de exemplo.
-                    </p>
-
-                    <button class="btn btn-info">
-                        Saiba mais
-                    </button>
-
-                </div>
-
-            </div>
-
+          <div class="modal-footer">
+            <button
+              class="btn btn-primary"
+              type="button"
+              onclick="copiarEmail()"
+            >
+              <i class="bi bi-clipboard"></i> Copiar
+            </button>
+          </div>
         </div>
-
-        <div class="col-lg-4">
-
-            <div class="card aviso-card">
-
-                <div class="card-body">
-
-                    <span class="badge bg-warning text-dark">
-                        ALERTA
-                    </span>
-
-                    <h3 class="mt-3">
-                        Aviso
-                    </h3>
-
-                    <p>
-                        Segunda mensagem de exemplo.
-                    </p>
-
-                    <button class="btn btn-warning">
-                        Abrir
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="col-lg-4">
-
-            <div class="card aviso-card">
-
-                <div class="card-body">
-
-                    <span class="badge bg-success">
-                        EVENTO
-                    </span>
-
-                    <h3 class="mt-3">
-                        Capacitação
-                    </h3>
-
-                    <p>
-                        Terceira mensagem de exemplo.
-                    </p>
-
-                    <button class="btn btn-success">
-                        Ver evento
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
+      </div>
     </div>
 
-</div>
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div
+        id="toastCopiado"
+        class="toast text-bg-success border-0"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+        data-bs-delay="2500"
+      >
+        <div class="d-flex">
+          <div class="toast-body">
+            <i class="bi bi-check-circle-fill"></i>
+            E-mail copiado para a área de transferência.
+          </div>
+          <button
+            type="button"
+            class="btn-close btn-close-white me-2 m-auto"
+            data-bs-dismiss="toast"
+            aria-label="Fechar"
+          ></button>
+        </div>
+      </div>
+    </div>
 
-</body>
-
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/particles.js"></script>
+  </body>
 </html>
