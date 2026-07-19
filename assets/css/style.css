@@ -1,7 +1,71 @@
 /*
-====================================
+=========================================
 Central de Comunicados
+Versão 1.2
 NucleoDesenvolvimento
-Versão 1.1
-====================================
+=========================================
 */
+
+body{
+
+    background:#0d1117;
+
+    color:white;
+
+    font-family:Segoe UI,Arial,sans-serif;
+
+    min-height:100vh;
+
+}
+
+h1{
+
+    font-weight:700;
+
+    color:#ffffff;
+
+}
+
+.lead{
+
+    color:#8b949e;
+
+}
+
+.aviso-card{
+
+    background:#161b22;
+
+    border:1px solid #30363d;
+
+    border-radius:20px;
+
+    transition:.35s;
+
+    box-shadow:
+
+    0 0 25px rgba(0,150,255,.08);
+
+}
+
+.aviso-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+
+    0 0 35px rgba(0,170,255,.35);
+
+}
+
+.card-body{
+
+    padding:30px;
+
+}
+
+.btn{
+
+    border-radius:12px;
+
+}
